@@ -1,3 +1,7 @@
+## Book 4 Chapter 5 Practices 1-3
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +70,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+***
+
+### Practice: Fire Employees
+
+Add the same functionality to the EmployeeList component so that employees can be fired!
+
+### Practice: Remove Owners
+
+Add the same functionality to the OwnerList for when they decide they no longer want to be a customer.
+
+### Practice: Close a Location
+
+Add the same functionality to the LocationList for when a location closes down.

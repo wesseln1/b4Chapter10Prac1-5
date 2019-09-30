@@ -19,6 +19,7 @@ class LocationList extends Component {
   }
 
   deleteLocation = id => {
+  // calling the database to delete card then render the new data to dom
     locationManager.delete(id)
     .then(() => {
       locationManager.getAll()
@@ -31,7 +32,7 @@ class LocationList extends Component {
   }
 
   render(){
-    console.log("LocationList: Render");
+  // mapping over the array and rendering all cards to dom
     return(
       <div className="container-cards">
         {this.state.locations.map(location =>

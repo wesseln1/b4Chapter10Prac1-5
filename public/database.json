@@ -48,7 +48,7 @@
       "id": 3
     },
     {
-      "name": "Amy",
+      "name": "Drew",
       "position": "Stocker",
       "id": 4
     }
@@ -61,8 +61,8 @@
     },
     {
       "name": "Nashville South",
-      "address": "1010 Square Ave",
-      "id": 1
+      "address": "090 Square Ave",
+      "id": 2
     }
   ],
   "owners": [
@@ -72,14 +72,14 @@
       "id": 1
     },
     {
+      "name": "Brett",
+      "breed": "Human",
+      "id": 2
+    },
+    {
       "name": "Petey",
       "breed": "Dwarf",
       "id": 3
-    },
-    {
-      "name": "Brett",
-      "breed": "Human",
-      "id": 4
     }
   ]
 }

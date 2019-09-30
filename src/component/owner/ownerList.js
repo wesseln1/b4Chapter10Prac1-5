@@ -19,6 +19,7 @@ class OwnerList extends Component {
     }
     
     deleteOwner = id => {
+    // calling the database to delete card then render the new data to dom
         ownerManager.delete(id)
         .then(() => {
             ownerManager.getAll()
@@ -31,7 +32,7 @@ class OwnerList extends Component {
     }
     
     render(){
-        console.log("OwnerList: Render");
+    // mapping over the array and rendering all cards to dom
         return(
           <div className="container-cards">
             {this.state.owners.map(owner =>

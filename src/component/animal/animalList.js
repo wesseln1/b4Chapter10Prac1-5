@@ -20,6 +20,7 @@ componentDidMount(){
 }
 
 deleteAnimal = id => {
+  // calling the database to delete card then render the new data to dom
     animalManager.delete(id)
     .then(() => {
       animalManager.getAll()
@@ -32,8 +33,7 @@ deleteAnimal = id => {
   }
 
   render(){
-    console.log("AnimalList: Render");
-  
+  // mapping over the array and rendering all cards to dom
     return(
       <div className="container-cards">
         {this.state.animals.map(animal =>
