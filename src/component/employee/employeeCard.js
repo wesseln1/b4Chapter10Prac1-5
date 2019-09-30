@@ -13,8 +13,8 @@ class EmployeeCard extends Component {
           </picture>
           <h3>Name: <b>{this.props.employee.name}</b></h3>
           <p>Position: {this.props.employee.position}</p>
-          <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire</button>
-          <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
+          <button className="btn-delete" type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire</button>
+          <Link to={`/employees/${this.props.employee.id}`}><button className="btn-details">Details</button></Link>
         </div>
       </div>
     );

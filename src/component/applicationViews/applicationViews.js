@@ -9,6 +9,7 @@ import OwnerList from "../owner/ownerList";
 import AnimalDetail from "../animal/animalDetail";
 import EmployeeDetail from "../employee/employeeDetail";
 import LocationDetail from "../location/locationDetail";
+import AnimalForm from "../animal/animalForm"
 
 class ApplicationViews extends Component {
   render() {
@@ -26,7 +27,7 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            return <AnimalList />;
+            return <AnimalList {...props} />;
           }}
         />
         <Route
@@ -34,8 +35,17 @@ class ApplicationViews extends Component {
           render={props => {
             // Pass the animalId to the AnimalDetailComponent
             return (
-              <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
+              <AnimalDetail
+                animalId={parseInt(props.match.params.animalId)}
+                {...props}
+              />
             );
+          }}
+        />
+        <Route
+          path="/animals/new"
+          render={props => {
+            return <AnimalForm {...props} />;
           }}
         />
         <Route
@@ -45,31 +55,38 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          exact path="/locations"
+          exact
+          path="/locations"
           render={props => {
             return <LocationList />;
           }}
         />
-        <Route 
+        <Route
           path="/locations/:locationId(\d+)"
           render={props => {
             return (
-              <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props}/>
+              <LocationDetail
+                locationId={parseInt(props.match.params.locationId)}
+                {...props}
+              />
             );
           }}
         />
         <Route
-          exact path="/employees"
+          exact
+          path="/employees"
           render={props => {
             return <EmployeeList />;
           }}
         />
-         <Route
+        <Route
           path="/employees/:employeeId(\d+)"
           render={props => {
             // Pass the animalId to the AnimalDetailComponent
             return (
-              <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
+              <EmployeeDetail
+                employeeId={parseInt(props.match.params.employeeId)}
+              />
             );
           }}
         />

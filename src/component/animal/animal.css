@@ -1,0 +1,17 @@
+.btn-delete, .btn-details {
+  background-color: white;
+  color: black;
+  border: 2px solid cornflowerblue;
+  border-radius: 0.888em; /* Green */
+  margin: 5px;
+}
+
+.btn-delete, .btn-details {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.btn-delete:hover , .btn-details:hover{
+  background-color: cornflowerblue; /* Green */
+  color: white;
+}

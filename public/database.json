@@ -24,6 +24,11 @@
       "name": "Milo",
       "breed": "Cat",
       "id": 6
+    },
+    {
+      "name": "Pherb",
+      "breed": "Cat",
+      "id": 7
     }
   ],
   "employees": [
