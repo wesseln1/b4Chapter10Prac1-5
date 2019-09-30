@@ -17,7 +17,7 @@ class EmployeeDetail extends Component {
     .then((employee) => {
       this.setState({
         name: employee.name,
-        breed: employee.breed
+        position: employee.position
       });
     });
   }
@@ -30,7 +30,7 @@ class EmployeeDetail extends Component {
             <img src={worker} alt="My Dog" />
           </picture>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-            <p>Breed: {this.state.breed}</p>
+            <p>Position: {this.state.position}</p>
         </div>
       </div>
     );
