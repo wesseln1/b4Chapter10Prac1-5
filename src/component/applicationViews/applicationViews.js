@@ -6,9 +6,10 @@ import AnimalList from "../animal/animalList";
 import LocationList from "../location/locationList";
 import EmployeeList from "../employee/employeeList";
 import OwnerList from "../owner/ownerList";
+import AnimalDetail from "../animal/animalDetail";
+import EmployeeDetail from "../employee/employeeDetail";
 
 class ApplicationViews extends Component {
-
   render() {
     return (
       <React.Fragment>
@@ -19,10 +20,21 @@ class ApplicationViews extends Component {
             return <Home />;
           }}
         />
+        {/* Make sure you add the `exact` attribute here */}
         <Route
+          exact
           path="/animals"
           render={props => {
             return <AnimalList />;
+          }}
+        />
+        <Route
+          path="/animals/:animalId(\d+)"
+          render={props => {
+            // Pass the animalId to the AnimalDetailComponent
+            return (
+              <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+            );
           }}
         />
         <Route
@@ -38,9 +50,18 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
-          path="/employees"
+          exact path="/employees"
           render={props => {
             return <EmployeeList />;
+          }}
+        />
+         <Route
+          path="/employees/:employeeId(\d+)"
+          render={props => {
+            // Pass the animalId to the AnimalDetailComponent
+            return (
+              <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
+            );
           }}
         />
       </React.Fragment>

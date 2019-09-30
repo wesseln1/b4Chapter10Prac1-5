@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import worker from "./worker.png";
+import { Link } from "react-router-dom";
 
 // rendering each card to the dom
 class EmployeeCard extends Component {
@@ -13,6 +14,7 @@ class EmployeeCard extends Component {
           <h3>Name: <b>{this.props.employee.name}</b></h3>
           <p>Position: {this.props.employee.position}</p>
           <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire</button>
+          <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
         </div>
       </div>
     );
