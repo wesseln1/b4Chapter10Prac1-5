@@ -54,7 +54,7 @@ class ApplicationViews extends Component {
           path="/locations/:locationId(\d+)"
           render={props => {
             return (
-              <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+              <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props}/>
             );
           }}
         />

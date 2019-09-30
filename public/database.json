@@ -1,11 +1,6 @@
 {
   "animals": [
     {
-      "name": "Theo",
-      "breed": "Dog",
-      "id": 1
-    },
-    {
       "name": "Chester",
       "breed": "Dog",
       "id": 2
@@ -55,14 +50,14 @@
   ],
   "locations": [
     {
-      "name": "Nashville North",
-      "address": "500 Circle Way",
-      "id": 1
-    },
-    {
       "name": "Nashville South",
       "address": "090 Square Ave",
       "id": 2
+    },
+    {
+      "name": "Nashville North",
+      "address": "500 Circle Way",
+      "id": 1
     }
   ],
   "owners": [

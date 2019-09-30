@@ -1,4 +1,4 @@
-## Book 4 Chapter 6 Practice 1
+## Book 4 Chapter 7 Practice 1
 
 ---
 
@@ -73,6 +73,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ***
 
-### Practice: Show The Details
+### Practice: Close a location
 
-We found that users want to bookmark specific locations. Add a Details button to each location card, create a ```<LocationDetail>``` component, and add an additional route to handle the location detail.
+Refactor the ```<LocationDetail>``` component to allow closing(deleting). You will need to incorporate a loadingStatus. Once a location has been closed, automatically redirect the user back to the location list.
