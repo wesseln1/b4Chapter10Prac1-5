@@ -15,7 +15,7 @@
       "breed": "Cat",
       "id": 3
     },
-  {
+    {
       "name": "Winnie",
       "breed": "Dog",
       "id": 4
@@ -33,23 +33,23 @@
   ],
   "employees": [
     {
-      "name": "Julian",
-      "posistion": "Cashier",
-      "id": 1
-    },
-    {
       "name": "Mary",
-      "posistion": "Owner",
+      "position": "Owner",
       "id": 2
     },
     {
+      "name": "Julian",
+      "position": "Cashier",
+      "id": 1
+    },
+    {
       "name": "Jake",
-      "posistion": "Manager",
+      "position": "Manager",
       "id": 3
     },
     {
       "name": "Amy",
-      "posistion": "Stocker",
+      "position": "Stocker",
       "id": 4
     }
   ],
