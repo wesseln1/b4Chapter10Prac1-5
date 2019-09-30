@@ -18,15 +18,31 @@ class LocationList extends Component {
     });
   }
 
-  render() {
-// rendering card container and calling card function to render ALL cards
-    return (
+  deleteLocation = id => {
+    locationManager.delete(id)
+    .then(() => {
+      locationManager.getAll()
+      .then((locations) => {
+        this.setState({
+          locations: locations
+        })
+      })
+    })
+  }
+
+  render(){
+    console.log("LocationList: Render");
+    return(
       <div className="container-cards">
-        {this.state.locations.map(location => (
-          <LocationCard key={location.id} location={location} />
-        ))}
+        {this.state.locations.map(location =>
+          <LocationCard
+            key={location.id}
+            location={location}
+            deleteLocation={this.deleteLocation}
+          />
+        )}
       </div>
-    );
+    )
   }
 }
 
