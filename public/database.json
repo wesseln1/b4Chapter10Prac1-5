@@ -1,0 +1,85 @@
+{
+  "animals": [
+    {
+      "name": "Theo",
+      "breed": "Dog",
+      "id": 1
+    },
+    {
+      "name": "Chester",
+      "breed": "Dog",
+      "id": 2
+    },
+    {
+      "name": "Todd",
+      "breed": "Cat",
+      "id": 3
+    },
+  {
+      "name": "Winnie",
+      "breed": "Dog",
+      "id": 4
+    },
+    {
+      "name": "Kiwu",
+      "breed": "Cat",
+      "id": 5
+    },
+    {
+      "name": "Milo",
+      "breed": "Cat",
+      "id": 6
+    }
+  ],
+  "employees": [
+    {
+      "name": "Julian",
+      "posistion": "Cashier",
+      "id": 1
+    },
+    {
+      "name": "Mary",
+      "posistion": "Owner",
+      "id": 2
+    },
+    {
+      "name": "Jake",
+      "posistion": "Manager",
+      "id": 3
+    },
+    {
+      "name": "Amy",
+      "posistion": "Stocker",
+      "id": 4
+    }
+  ],
+  "locations": [
+    {
+      "name": "Nashville North",
+      "address": "500 Circle Way",
+      "id": 1
+    },
+    {
+      "name": "Nashville South",
+      "address": "10101 Binary Court",
+      "id": 2
+    }
+  ],
+  "owners": [
+    {
+      "name": "Nick",
+      "breed": "Human",
+      "id": 1
+    },
+    {
+      "name": "Brett",
+      "breed": "Human",
+      "id": 2
+    },
+    {
+      "name": "Petey",
+      "breed": "Dwarf",
+      "id": 3
+    }
+  ]
+}
