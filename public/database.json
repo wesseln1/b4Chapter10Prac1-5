@@ -61,8 +61,8 @@
     },
     {
       "name": "Nashville South",
-      "address": "10101 Binary Court",
-      "id": 2
+      "address": "1010 Square Ave",
+      "id": 1
     }
   ],
   "owners": [
@@ -72,14 +72,14 @@
       "id": 1
     },
     {
-      "name": "Brett",
-      "breed": "Human",
-      "id": 2
-    },
-    {
       "name": "Petey",
       "breed": "Dwarf",
       "id": 3
+    },
+    {
+      "name": "Brett",
+      "breed": "Human",
+      "id": 4
     }
   ]
 }

@@ -12,7 +12,7 @@ class LocationCard extends Component {
             <img src={place} alt="location" />
           </picture>
           <h3>Name: <b>{this.props.location.name}</b></h3>
-          <p>Address: {this.props.location.position}</p>
+          <p>Address: {this.props.location.address}</p>
           <button type="button" onClick={() => this.props.deleteLocation(this.props.location.id)}>Discharge</button>
         </div>
       </div>

@@ -16,17 +16,34 @@ class OwnerList extends Component {
                 owners: owners
             });
         });
-    }           
-    render() {
-    // rendering card container and calling card function to render ALL cards             
-    return (
-        <div className="container-cards">
-            {this.state.owners.map(owner => (
-                <OwnerCard key={owner.id} owner={owner} />
-            ))}
-        </div>
-    );
-}
+    }
+    
+    deleteOwner = id => {
+        ownerManager.delete(id)
+        .then(() => {
+            ownerManager.getAll()
+            .then((owners) => {
+                this.setState({
+                    owners: owners
+                })
+            })
+        })
+    }
+    
+    render(){
+        console.log("OwnerList: Render");
+        return(
+          <div className="container-cards">
+            {this.state.owners.map(owner =>
+              <OwnerCard
+                key={owner.id}
+                owner={owner}
+                deleteOwner={this.deleteOwner}
+              />
+            )}
+          </div>
+        )
+      }
 }
 
 export default OwnerList;
