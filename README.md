@@ -1,4 +1,4 @@
-## Book 4 Chapter 5 Practices 1-3
+## Book 4 Chapter 6 Practice 1
 
 ---
 
@@ -73,14 +73,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ***
 
-### Practice: Fire Employees
+### Practice: Show The Details
 
-Add the same functionality to the EmployeeList component so that employees can be fired!
-
-### Practice: Remove Owners
-
-Add the same functionality to the OwnerList for when they decide they no longer want to be a customer.
-
-### Practice: Close a Location
-
-Add the same functionality to the LocationList for when a location closes down.
+We found that users want to bookmark specific locations. Add a Details button to each location card, create a ```<LocationDetail>``` component, and add an additional route to handle the location detail.
