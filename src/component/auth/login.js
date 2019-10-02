@@ -6,7 +6,7 @@ class Login extends Component {
   // Set initial state
   state = {
     email: "",
-    password: ""
+    password: "",
   }
 
   // Update state whenever an input field is edited
@@ -16,13 +16,29 @@ class Login extends Component {
     this.setState(stateToChange)
   }
 
+  rememberMe = () => {
+    let box = document.querySelector(".remember")
+    if(box.checked === true){
+      let confirm = window.confirm("Are you sure?")
+      if(confirm ===  true){
+        localStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: this.state.email,
+            password: this.state.password,
+          })
+          )
+        }
+      }
+  }
+
   handleLogin = (e) => {
     e.preventDefault()
     /*
         For now, just store the email and password that
         the customer enters into local storage.
     */
-    localStorage.setItem(
+    sessionStorage.setItem(
         "credentials",
         JSON.stringify({
             email: this.state.email,
@@ -49,8 +65,11 @@ class Login extends Component {
                     placeholder="Password"
                     required="" />
                 <label htmlFor="inputPassword">Password</label>
+
+                <label htmlFor="rememberMe">Remember Me</label>
+                <input type="checkbox" className="remember" ></input>
             </div>
-            <button type="submit">
+            <button type="submit" onClick={this.rememberMe}>
                 Sign in
             </button>
         </fieldset>

@@ -1,4 +1,4 @@
-## Book 4 Chapter 9 Practice 1
+## Book 4 Chapter 10 Practice/Challenge 1-5
 
 ---
 
@@ -73,7 +73,25 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ***
 
-### Practice: Adding Employees, Owners, and Locations
+### Practice: No Content for You!
 
-1. Create forms for employees, owners, and locations.
-2. Update EmployeeManager, OwnerManager, and LocationManager with methods to POST new objects to the API.
+Ensure that customers can't access locations, owners, or employees unless they submit authentication.
+
+### Practice: Change the view once the user logs in
+
+Once a user logs in, redirect them to the home route. You will need to refactor the login route. With routes, consider when you will need to use component vs render and the use of {...props}.
+
+### Challenge: No Animal ID in API
+
+What if an animalId is no longer available in the API? Write a conditional to display something different if an animal(user, employee or location) is not available/valid.
+
+### Challenge: Active NavBar Route
+
+In the NavBar, highlight the active section. For example, if you are viewing Animals, change the <NavBar> Animals link to lime (you could also disable the ability to click). Since the <NavBar is not part of a route, you will need to export default withRouter(NavBar) in order to have access to the router location properties. Consider how we used loadingStatus in a previous chapter.
+
+### Fun Challenge: Remember Me
+
+* Add a checkbox beneath the login form labeled Remember Me.
+* When the customer logs in and the checkbox is not checked, then save their information to session storage
+* When the customer logs in and the checkbox is checked, then save their information to local storage
+* Tip You will need to store the value of the checkbox in state.

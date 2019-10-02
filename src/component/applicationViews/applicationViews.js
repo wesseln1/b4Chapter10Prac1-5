@@ -14,7 +14,8 @@ import Login from "../auth/login";
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
-  isAuthenticated = () => localStorage.getItem("credentials") !== null;
+  isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+  isRemembered = () => localStorage.getItem("credentials") !== null;
   //returns true/false
   render() {
     return (
@@ -23,7 +24,7 @@ class ApplicationViews extends Component {
           exact
           path="/"
           render={props => {
-            if(this.isAuthenticated()){
+            if(this.isAuthenticated()||this.isRemembered()){
               return <Home />;
             } else {
               return <Redirect to="/login" />
@@ -35,7 +36,7 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            if (this.isAuthenticated()) {
+            if (this.isAuthenticated()||this.isRemembered()) {
               return <AnimalList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -63,7 +64,7 @@ class ApplicationViews extends Component {
         <Route
           path="/owners"
           render={props => {
-            if(this.isAuthenticated()){
+            if(this.isAuthenticated()||this.isRemembered()){
               return <OwnerList {...props}/>;
             } else {
               return <Redirect to="/login" />
@@ -74,7 +75,7 @@ class ApplicationViews extends Component {
           exact
           path="/locations"
           render={props => {
-            if(this.isAuthenticated()){
+            if(this.isAuthenticated()||this.isRemembered()){
               return <LocationList {...props}/>;
             } else {
               return <Redirect to="/login" />
@@ -96,7 +97,7 @@ class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            if(this.isAuthenticated()){
+            if(this.isAuthenticated()||this.isRemembered()){
               return <EmployeeList {...props}/>;
             } else {
               return <Redirect to="/login" />
