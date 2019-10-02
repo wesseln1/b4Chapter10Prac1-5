@@ -3,53 +3,65 @@
     {
       "name": "Chester",
       "breed": "Dog",
-      "id": 2
+      "id": 2,
+      "employeeId": 2
     },
     {
       "name": "Todd",
       "breed": "Cat",
-      "id": 3
+      "id": 3,
+      "employeeId": 3
     },
     {
       "name": "Winnie",
       "breed": "Dog",
-      "id": 4
+      "id": 4,
+      "employeeId": 3
     },
     {
       "name": "Kiwu",
       "breed": "Cat",
-      "id": 5
+      "id": 5,
+      "employeeId": 4
     },
     {
       "name": "Milo",
       "breed": "Cat",
-      "id": 6
+      "id": 6,
+      "employeeId": 1
     },
     {
       "name": "Pherb",
       "breed": "Cat",
-      "id": 7
+      "id": 7,
+      "employeeId": 2
+    },
+    {
+      "name": "Casey",
+      "breed": "Dog",
+      "id": 8,
+      "employeeId": 2
     }
   ],
   "employees": [
     {
       "name": "Mary",
-      "position": "Owner",
+      "position": "Doctor",
       "id": 2
     },
     {
       "name": "Julian",
-      "position": "Cashier",
+      "position": "Doctoc",
       "id": 1
     },
     {
       "name": "Jake",
-      "position": "Manager",
+      "position": "Nurse",
       "id": 3
     },
     {
       "name": "Drew",
-      "position": "Stocker",
+      "position": "Owner",
       "id": 4
     }
   ],

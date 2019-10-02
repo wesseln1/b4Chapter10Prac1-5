@@ -13,7 +13,7 @@ export default class OwnerCard extends Component {
               <div>
                 <h3>Name: <span className="card-petname">{this.props.owner.name}</span></h3>
                 <p>Breed: {this.props.owner.breed}</p>
-                <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Remove</button>
+                <button className="btn-delete" type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Remove</button>
               </div>
           </div>
         </div>

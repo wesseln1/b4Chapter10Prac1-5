@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "../home/home";
 import AnimalList from "../animal/animalList";
@@ -9,9 +9,13 @@ import OwnerList from "../owner/ownerList";
 import AnimalDetail from "../animal/animalDetail";
 import EmployeeDetail from "../employee/employeeDetail";
 import LocationDetail from "../location/locationDetail";
-import AnimalForm from "../animal/animalForm"
+import AnimalForm from "../animal/animalForm";
+import Login from "../auth/login";
 
 class ApplicationViews extends Component {
+  // Check if credentials are in local storage
+  isAuthenticated = () => localStorage.getItem("credentials") !== null;
+  //returns true/false
   render() {
     return (
       <React.Fragment>
@@ -19,7 +23,11 @@ class ApplicationViews extends Component {
           exact
           path="/"
           render={props => {
-            return <Home />;
+            if(this.isAuthenticated()){
+              return <Home />;
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         {/* Make sure you add the `exact` attribute here */}
@@ -27,7 +35,11 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            return <AnimalList {...props} />;
+            if (this.isAuthenticated()) {
+              return <AnimalList {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
           }}
         />
         <Route
@@ -51,14 +63,22 @@ class ApplicationViews extends Component {
         <Route
           path="/owners"
           render={props => {
-            return <OwnerList />;
+            if(this.isAuthenticated()){
+              return <OwnerList {...props}/>;
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         <Route
           exact
           path="/locations"
           render={props => {
-            return <LocationList />;
+            if(this.isAuthenticated()){
+              return <LocationList {...props}/>;
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         <Route
@@ -76,7 +96,11 @@ class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            return <EmployeeList />;
+            if(this.isAuthenticated()){
+              return <EmployeeList {...props}/>;
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         <Route
@@ -90,6 +114,7 @@ class ApplicationViews extends Component {
             );
           }}
         />
+        <Route path="/login" component={Login} />
       </React.Fragment>
     );
   }

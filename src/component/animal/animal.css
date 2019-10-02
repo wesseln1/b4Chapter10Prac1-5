@@ -2,7 +2,7 @@
   background-color: white;
   color: black;
   border: 2px solid cornflowerblue;
-  border-radius: 0.888em; /* Green */
+  border-radius: 0.888em;
   margin: 5px;
 }
 
@@ -12,6 +12,6 @@
 }
 
 .btn-delete:hover , .btn-details:hover{
-  background-color: cornflowerblue; /* Green */
+  background-color: cornflowerblue; 
   color: white;
 }

@@ -2,20 +2,26 @@ import React, { Component } from "react";
 //import the components we will need
 import AnimalCard from "./animalCard";
 import animalManager from "../../modules/animalManager";
+import employeeManager from "../../modules/employeeManager";
+import AnimalForm from "./animalForm";
+// import animalCaretaker from "./animalCaretaker";
 
 class AnimalList extends Component {
   //define what this component needs to render
   state = {
-    animals: []
+    animals: [],
+    employees: []
   };
 
   componentDidMount() {
     //getAll from AnimalManager and hang on to that data; put it in state
-    animalManager.getAll().then(animals => {
-      this.setState({
-        animals: animals
-      });
-    });
+    animalManager
+      .getAll()
+      .then(animals => {
+        this.setState({
+          animals: animals
+        });
+      })
   }
 
   deleteAnimal = id => {
@@ -39,9 +45,10 @@ class AnimalList extends Component {
             className="btn btn-primary"
             onClick={() => {
               this.props.history.push("/animals/new");
+              // <AnimalForm employees={this.state.employees}/>
             }}
           >
-            Admit Animal
+           Admit Animal
           </button>
         </section>
         <div className="container-cards">

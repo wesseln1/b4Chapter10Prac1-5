@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import AnimalManager from '../../modules/animalManager';
 import './animalForm.css'
+import AnimalCaretaker from './animalCaretaker';
+// import animalCaretaker from './animalCaretaker';
+import employeeManager from '../../modules/employeeManager';
 
 class AnimalForm extends Component {
     state = {
         animalName: "",
         breed: "",
+        employeeId: null,
         loadingStatus: false,
+        employees: []
     };
 
     handleFieldChange = evt => {
@@ -14,7 +19,17 @@ class AnimalForm extends Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
+ 
+    componentDidMount(){
+        employeeManager.getAll()
+        .then(employees => {
+                this.setState({
+                  employees: employees,
+                });
+            })
+    }
 
+  
     /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
     */
     constructNewAnimal = evt => {
@@ -26,6 +41,7 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
+                employeeId: this.props.employees.employeeId
             };
 
             // Create the animal and redirect user to animal list
@@ -37,7 +53,7 @@ class AnimalForm extends Component {
     render(){
 
         return(
-            <>
+            // <React.Fragment>
             <form>
                 <fieldset>
                     <div className="formgrid">
@@ -57,6 +73,13 @@ class AnimalForm extends Component {
                         id="breed"
                         placeholder="Breed"
                         />
+                        <select className="animalCaretaker">
+                            <option>Caretaker</option>
+                            {this.state.employees.map(employee => (
+                                <AnimalCaretaker key={employee.id} employee={employee}/>
+                            ))
+                        }
+                        </select>
                     </div>
                     <div className="alignRight">
                         <button
@@ -67,7 +90,7 @@ class AnimalForm extends Component {
                     </div>
                 </fieldset>
             </form>
-        </>
+            // </React.Fragment>
         )
     }
 }

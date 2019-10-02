@@ -1,4 +1,4 @@
-## Book 4 Chapter 7 Practice 1
+## Book 4 Chapter 9 Practice 1
 
 ---
 
@@ -73,6 +73,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ***
 
-### Practice: Close a location
+### Practice: Adding Employees, Owners, and Locations
 
-Refactor the ```<LocationDetail>``` component to allow closing(deleting). You will need to incorporate a loadingStatus. Once a location has been closed, automatically redirect the user back to the location list.
+1. Create forms for employees, owners, and locations.
+2. Update EmployeeManager, OwnerManager, and LocationManager with methods to POST new objects to the API.

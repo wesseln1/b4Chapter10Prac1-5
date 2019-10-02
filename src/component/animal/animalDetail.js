@@ -39,7 +39,7 @@ class AnimalDetail extends Component {
           </picture>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Breed: {this.state.breed}</p>
-            <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
+            <button className="btn-details" type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>
     );
