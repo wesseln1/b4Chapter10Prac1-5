@@ -46,6 +46,7 @@ class ApplicationViews extends Component {
         <Route
           path="/animals/:animalId(\d+)"
           render={props => {
+            console.log(props)
             // Pass the animalId to the AnimalDetailComponent
             return (
               <AnimalDetail

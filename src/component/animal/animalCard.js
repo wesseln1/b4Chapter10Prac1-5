@@ -12,6 +12,7 @@ class AnimalCard extends Component {
           </picture>
           <h3>Name: <b>{this.props.animal.name}</b></h3>
           <p>Breed: {this.props.animal.breed}</p>
+          <p>Caretaker: {this.props.animal.employeeId}</p>
           <button className="btn-delete" type="button" onClick={() => this.props.deleteAnimal(this.props.animal.id)}>Discharge</button>
           <Link to={`/animals/${this.props.animal.id}`}><button className="btn-details">Details</button></Link>
         </div>

@@ -27,6 +27,13 @@ class AnimalForm extends Component {
                   employees: employees,
                 });
             })
+            .then(() => {
+                this.state.employees.map(employee => {
+                    this.setState({
+                        employeeId: employee.id
+                    })
+                })
+            })
     }
 
   
@@ -41,7 +48,7 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
-                employeeId: this.props.employees.employeeId
+                employeeId: this.state.employeeId
             };
 
             // Create the animal and redirect user to animal list

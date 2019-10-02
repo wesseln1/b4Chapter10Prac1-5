@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, withRouter, Redirect } from "react-router-dom";
 import animalManager from '../../modules/animalManager';
 import './animalDetail.css'
 
@@ -8,6 +9,7 @@ class AnimalDetail extends Component {
       name: "",
       breed: "",
       loadingStatus: true,
+      noAnimal: false
   }
 
   componentDidMount(){
@@ -15,11 +17,20 @@ class AnimalDetail extends Component {
     //get(id) from AnimalManager and hang on to the data; put it into state
     animalManager.get(this.props.animalId)
     .then((animal) => {
-      this.setState({
-        name: animal.name,
-        breed: animal.breed,
-        loadingStatus: false,
-      });
+      if(animal.id === undefined){
+        this.setState({
+          noAnimal: true
+        })
+        // alert("No animals")
+      } else {
+        this.setState({
+          name: animal.name,
+          breed: animal.breed,
+          loadingStatus: false,
+          noAnimal: false
+        });
+        console.log(this.state.noAnimal)
+      }
     });
   }
 
@@ -31,8 +42,10 @@ class AnimalDetail extends Component {
 }
 
   render() {
-    return (
-      <div className="card">
+    console.log(this.state.noAnimal)
+    if(this.state.noAnimal === false){
+      return (
+        <div className="card">
         <div className="card-content">
           <picture>
             <img src={require('./logodog.svg')} alt="My Dog" className="animalImg"/>
@@ -43,7 +56,11 @@ class AnimalDetail extends Component {
         </div>
       </div>
     );
+  }else {
+    alert("No Animals")
+    return <Redirect to="/animals" />
   }
+}
 }
 
 export default AnimalDetail;
