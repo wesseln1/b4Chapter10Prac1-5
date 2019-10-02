@@ -1,46 +1,18 @@
 {
   "animals": [
     {
-      "name": "Chester",
-      "breed": "Dog",
-      "id": 2,
-      "employeeId": 2
-    },
-    {
-      "name": "Todd",
-      "breed": "Cat",
-      "id": 3,
-      "employeeId": 3
-    },
-    {
-      "name": "Winnie",
-      "breed": "Dog",
-      "id": 4,
-      "employeeId": 3
-    },
-    {
-      "name": "Kiwu",
-      "breed": "Cat",
-      "id": 5,
-      "employeeId": 4
-    },
-    {
-      "name": "Milo",
-      "breed": "Cat",
-      "id": 6,
-      "employeeId": 1
-    },
-    {
-      "name": "Pherb",
-      "breed": "Cat",
-      "id": 7,
-      "employeeId": 2
-    },
-    {
+      "url": "pictures/doggo.jpg",
       "name": "Casey",
       "breed": "Mix",
-      "employeeId": 4,
-      "id": 8
+      "caretaker": "Drew",
+      "id": 1
+    },
+    {
+      "url": "pictures/download.jpg",
+      "name": "Theo",
+      "breed": "german",
+      "caretaker": "Drew",
+      "id": 2
     }
   ],
   "employees": [

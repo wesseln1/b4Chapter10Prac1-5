@@ -9,8 +9,9 @@ class AnimalForm extends Component {
     state = {
         animalName: "",
         breed: "",
-        employeeId: null,
+        // caretaker: "",
         loadingStatus: false,
+        imgUrl: "",
         employees: []
     };
 
@@ -27,13 +28,6 @@ class AnimalForm extends Component {
                   employees: employees,
                 });
             })
-            .then(() => {
-                this.state.employees.map(employee => {
-                    this.setState({
-                        employeeId: employee.id
-                    })
-                })
-            })
     }
 
   
@@ -45,10 +39,13 @@ class AnimalForm extends Component {
             window.alert("Please input an animal name and breed");
         } else {
             this.setState({ loadingStatus: true });
+            let imgValue = this.state.imgUrl.replace("C:\\fakepath\\", "pictures/")
+            console.log(this.state.imgUrl)
             const animal = {
+                url: imgValue,
                 name: this.state.animalName,
                 breed: this.state.breed,
-                employeeId: this.state.employeeId
+                caretaker: 
             };
 
             // Create the animal and redirect user to animal list
@@ -80,6 +77,8 @@ class AnimalForm extends Component {
                         id="breed"
                         placeholder="Breed"
                         />
+                        <label htmlFor="imgUrl">Upload Image</label>
+                        <input type="file" id="imgUrl" onChange={this.handleFieldChange}></input>
                         <select className="animalCaretaker">
                             <option>Caretaker</option>
                             {this.state.employees.map(employee => (
