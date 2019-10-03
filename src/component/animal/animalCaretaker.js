@@ -5,7 +5,7 @@ export default class AnimalCaretaker extends Component {
   render() {
       console.log("here at Animal");
         return (
-            <option id={this.props.employee.id}>{this.props.employee.name}</option>
+            <option value={this.props.employee.id}>{this.props.employee.name}</option>
         )
   }
 }

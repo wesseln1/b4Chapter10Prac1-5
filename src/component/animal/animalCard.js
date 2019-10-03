@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./animal.css";
+import animalManager from "../../modules/animalManager";
 
 class AnimalCard extends Component {
+
+  handleDelete = (id) => {
+    animalManager.delete(id)
+    .then(() => this.props.getData())
+  }
   render() {
     return (
       <div className="card">
@@ -14,7 +20,7 @@ class AnimalCard extends Component {
             Name: <b>{this.props.animal.name}</b>
           </h3>
           <p>Breed: {this.props.animal.breed}</p>
-          <p>Caretaker: {this.props.animal.caretaker}</p>
+          <p>Caretaker: {this.props.animal.employeeId}</p>
           <button
             className="btn-delete"
             type="button"

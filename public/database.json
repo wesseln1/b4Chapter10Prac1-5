@@ -2,29 +2,50 @@
   "animals": [
     {
       "url": "pictures/doggo.jpg",
-      "name": "Casey",
+      "name": "Theo",
       "breed": "Mix",
-      "caretaker": "Drew",
+      "employeeId": 3,
       "id": 1
     },
     {
-      "url": "pictures/download.jpg",
-      "name": "Theo",
-      "breed": "german",
-      "caretaker": "Drew",
+      "url": "pictures/download (1).jpg",
+      "name": "Gurri",
+      "breed": "Mix",
+      "employeeId": 2,
       "id": 2
+    },
+    {
+      "url": "pictures/download (1).jpg",
+      "name": "Casey",
+      "breed": "Mix",
+      "employeeId": 1,
+      "id": 3
+    },
+    {
+      "url": "pictures/download (1).jpg",
+      "name": "Trudy",
+      "breed": "Mix",
+      "employeeId": 2,
+      "id": 4
+    },
+    {
+      "url": "pictures/doggo.jpg",
+      "name": "Casey",
+      "breed": "Mix",
+      "employeeId": 3,
+      "id": 5
     }
   ],
   "employees": [
     {
-      "name": "Mary",
-      "position": "Doctor",
-      "id": 2
-    },
-    {
       "name": "Julian",
       "position": "Doctoc",
       "id": 1
+    },
+    {
+      "name": "Mary",
+      "position": "Doctor",
+      "id": 2
     },
     {
       "name": "Jake",

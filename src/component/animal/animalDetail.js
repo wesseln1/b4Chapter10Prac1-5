@@ -10,7 +10,7 @@ class AnimalDetail extends Component {
       breed: "",
       loadingStatus: true,
       noAnimal: false,
-      caretaker: "",
+      employeeId: null,
       url: ""
   }
 
@@ -31,7 +31,7 @@ class AnimalDetail extends Component {
           url: animal.url,
           loadingStatus: false,
           noAnimal: false,
-          caretaker: animal.caretaker
+          employeeId: animal.employeeId
         });
         console.log(this.state.caretaker)
       }

@@ -13,15 +13,24 @@ class AnimalList extends Component {
     employees: []
   };
 
-  componentDidMount() {
+  // componentDidMount() {
     //getAll from AnimalManager and hang on to that data; put it in state
-    animalManager
-      .getAll()
-      .then(animals => {
-        this.setState({
-          animals: animals
-        });
+    // animalManager
+    //   .getAll()
+    //   .then(animals => {
+    //     this.setState({
+    //       animals: animals
+    //     });
+    //   })
+  // }
+ 
+  getData = () => {
+    animalManager.getAll()
+    .then((animals) => {
+      this.setState({
+        animals: animals
       })
+    })
   }
 
   deleteAnimal = id => {
