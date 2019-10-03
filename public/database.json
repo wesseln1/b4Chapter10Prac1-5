@@ -1,58 +1,51 @@
 {
   "animals": [
     {
-      "name": "Chester",
-      "breed": "Dog",
-      "id": 2,
-      "employeeId": 2
+      "url": "pictures/doggo.jpg",
+      "name": "Theo",
+      "breed": "Mix",
+      "employeeId": 3,
+      "id": 1
     },
     {
-      "name": "Todd",
-      "breed": "Cat",
-      "id": 3,
-      "employeeId": 3
+      "url": "pictures/download (1).jpg",
+      "name": "Gurri",
+      "breed": "Mix",
+      "employeeId": 2,
+      "id": 2
     },
     {
-      "name": "Winnie",
-      "breed": "Dog",
-      "id": 4,
-      "employeeId": 3
-    },
-    {
-      "name": "Kiwu",
-      "breed": "Cat",
-      "id": 5,
-      "employeeId": 4
-    },
-    {
-      "name": "Milo",
-      "breed": "Cat",
-      "id": 6,
-      "employeeId": 1
-    },
-    {
-      "name": "Pherb",
-      "breed": "Cat",
-      "id": 7,
-      "employeeId": 2
-    },
-    {
+      "url": "pictures/download (1).jpg",
       "name": "Casey",
       "breed": "Mix",
-      "employeeId": 4,
-      "id": 8
+      "employeeId": 1,
+      "id": 3
+    },
+    {
+      "url": "pictures/download (1).jpg",
+      "name": "Trudy",
+      "breed": "Mix",
+      "employeeId": 2,
+      "id": 4
+    },
+    {
+      "url": "pictures/doggo.jpg",
+      "name": "Casey",
+      "breed": "Mix",
+      "employeeId": 3,
+      "id": 5
     }
   ],
   "employees": [
     {
-      "name": "Mary",
-      "position": "Doctor",
-      "id": 2
-    },
-    {
       "name": "Julian",
       "position": "Doctoc",
       "id": 1
+    },
+    {
+      "name": "Mary",
+      "position": "Doctor",
+      "id": 2
     },
     {
       "name": "Jake",

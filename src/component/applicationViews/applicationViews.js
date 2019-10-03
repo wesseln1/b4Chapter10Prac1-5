@@ -11,6 +11,8 @@ import EmployeeDetail from "../employee/employeeDetail";
 import LocationDetail from "../location/locationDetail";
 import AnimalForm from "../animal/animalForm";
 import Login from "../auth/login";
+import AnimalEditForm from "../animal/animalEditForm";
+import EmployeeWithAnimals from "../employee/employeeWithAnimals"
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
@@ -24,11 +26,11 @@ class ApplicationViews extends Component {
           exact
           path="/"
           render={props => {
-            if(this.isAuthenticated()||this.isRemembered()){
+            // if (this.isAuthenticated() || this.isRemembered()) {
               return <Home />;
-            } else {
-              return <Redirect to="/login" />
-            }
+            // } else {
+            //   return <Redirect to="/login" />;
+            // }
           }}
         />
         {/* Make sure you add the `exact` attribute here */}
@@ -36,7 +38,7 @@ class ApplicationViews extends Component {
           exact
           path="/animals"
           render={props => {
-            if (this.isAuthenticated()||this.isRemembered()) {
+            if (this.isAuthenticated() || this.isRemembered()) {
               return <AnimalList {...props} />;
             } else {
               return <Redirect to="/login" />;
@@ -44,9 +46,10 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
+          exact
           path="/animals/:animalId(\d+)"
           render={props => {
-            console.log(props)
+            console.log(props);
             // Pass the animalId to the AnimalDetailComponent
             return (
               <AnimalDetail
@@ -63,12 +66,18 @@ class ApplicationViews extends Component {
           }}
         />
         <Route
+          path="/animals/:animalId(\d+)/edit"
+          render={props => {
+            return <AnimalEditForm {...props} />;
+          }}
+        />
+        <Route
           path="/owners"
           render={props => {
-            if(this.isAuthenticated()||this.isRemembered()){
-              return <OwnerList {...props}/>;
+            if (this.isAuthenticated() || this.isRemembered()) {
+              return <OwnerList {...props} />;
             } else {
-              return <Redirect to="/login" />
+              return <Redirect to="/login" />;
             }
           }}
         />
@@ -76,11 +85,7 @@ class ApplicationViews extends Component {
           exact
           path="/locations"
           render={props => {
-            if(this.isAuthenticated()||this.isRemembered()){
-              return <LocationList {...props}/>;
-            } else {
-              return <Redirect to="/login" />
-            }
+              return <LocationList {...props} />;
           }}
         />
         <Route
@@ -98,10 +103,10 @@ class ApplicationViews extends Component {
           exact
           path="/employees"
           render={props => {
-            if(this.isAuthenticated()||this.isRemembered()){
-              return <EmployeeList {...props}/>;
+            if (this.isAuthenticated() || this.isRemembered()) {
+              return <EmployeeList {...props} />;
             } else {
-              return <Redirect to="/login" />
+              return <Redirect to="/login" />;
             }
           }}
         />
@@ -111,9 +116,15 @@ class ApplicationViews extends Component {
             // Pass the animalId to the AnimalDetailComponent
             return (
               <EmployeeDetail
-                employeeId={parseInt(props.match.params.employeeId)}
+                employeeId={parseInt(props.match.params.employeeId)} {...props}
               />
             );
+          }}
+        />
+        <Route
+          path="/employees/:employeeId(\d+)/details"
+          render={props => {
+            return <EmployeeWithAnimals {...props} />;
           }}
         />
         <Route path="/login" component={Login} />

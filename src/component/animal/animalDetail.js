@@ -9,7 +9,9 @@ class AnimalDetail extends Component {
       name: "",
       breed: "",
       loadingStatus: true,
-      noAnimal: false
+      noAnimal: false,
+      employeeId: null,
+      url: ""
   }
 
   componentDidMount(){
@@ -26,10 +28,12 @@ class AnimalDetail extends Component {
         this.setState({
           name: animal.name,
           breed: animal.breed,
+          url: animal.url,
           loadingStatus: false,
-          noAnimal: false
+          noAnimal: false,
+          employeeId: animal.employeeId
         });
-        console.log(this.state.noAnimal)
+        console.log(this.state.caretaker)
       }
     });
   }
@@ -48,10 +52,11 @@ class AnimalDetail extends Component {
         <div className="card">
         <div className="card-content">
           <picture>
-            <img src={require('./logodog.svg')} alt="My Dog" className="animalImg"/>
+            <img src={require(`../../${this.state.url}`)} alt="My Dog" className="animalImg"/>
           </picture>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Breed: {this.state.breed}</p>
+            <p>Caretaker: {this.state.caretaker}</p>
             <button className="btn-details" type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import employeeManager from "../../modules/employeeManager";
-import "./employeeForm.css";
+// import "./employeeForm.css";
 
 class EmployeeForm extends Component {
   state = {
